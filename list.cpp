@@ -29,10 +29,8 @@ void insertFirst(List &L, address P) {
     * FS : element pointed by P became the first element in List L
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
-
+    P->next = L.first;
+    L.first = P;
     //----------------------------------------
 }
 
@@ -42,9 +40,15 @@ void insertLast(List &L, address P) {
     * FS : element pointed by P became the last element in List L
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
+    if (L.first == NULL){
+        L.first = P;
+    } else {
+        address q = L.first;
+        while (q->next != NULL){
+            q = q->next;
+        }
+        q->next = p;
+    }
     //----------------------------------------
 }
 
@@ -111,8 +115,8 @@ void insertAfter(List &L, address Prec, address P) {
     *      pointed by pointer Prec
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
+    P->next = Prec->next;
+    Prec->next = P;
     //----------------------------------------
 
 }
