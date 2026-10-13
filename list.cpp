@@ -69,30 +69,41 @@ address findElm(List L, infotype x) {
 }
 
 void deleteFirst(List &L, address &P) {
-    /**
-    * IS : List L may be empty
-    * FS : first element in List L is removed and is pointed by P
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
-
-    //----------------------------------------
+    if (L.first == NULL) {
+        P = NULL;                 
+    } else {
+        P = L.first;
+        L.first = P->next;        
+        P->next = NULL;          
+    }
 }
-
+ 
 void deleteLast(List &L, address &P) {
-    /**
-    * IS : List L may be empty
-    * FS : last element in List L is removed and is pointed by P
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
-
-    //----------------------------------------
+    if (L.first == NULL) {
+        P = NULL;                 
+    } else if (L.first->next == NULL) {
+        P = L.first;             
+        L.first = NULL;
+    } else {
+        address Q = L.first;
+        while (Q->next->next != NULL) {
+            Q = Q->next;        
+        }
+        P = Q->next;
+        Q->next = NULL;
+    }
 }
+ 
+
+void deleteAfter(List &L, address Prec, address &P) {
+    if (Prec == NULL || Prec->next == NULL) {
+        P = NULL;                 
+    } else {
+        P = Prec->next;
+        Prec->next = P->next;    
+    }
+}
+ 
 
 void printInfo(List L) {
     /**
@@ -120,16 +131,5 @@ void insertAfter(List &L, address Prec, address P) {
     //----------------------------------------
 
 }
-void deleteAfter(List &L, address Prec, address &P) {
-    /**
-    * IS : Prec is not NULL
-    * FS : element which was before behind an element pointed by Prec
-    *      is removed and pointed by pointer P
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
 
-
-    //----------------------------------------
-}
 
