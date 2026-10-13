@@ -1,14 +1,7 @@
 #include "list.h"
 
 void createList(List &L) {
-    /**
-    * FS : set first(L) with Null
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
-    //----------------------------------------
+    L.first = nullptr;
 }
 
 address allocate(infotype x) {
@@ -26,14 +19,8 @@ address allocate(infotype x) {
 }
 
 void deallocate(address &P) {
-    /**
-    * FS : delete element pointed by P
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
-    //----------------------------------------
+    delete P;
+    P = nullptr;
 }
 
 void insertFirst(List &L, address P) {
