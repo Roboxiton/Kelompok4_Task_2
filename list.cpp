@@ -1,11 +1,14 @@
 #include "list.h"
 
 void createList(List &L) {
+
+    cout<<"your code here"<<endl;
+
     L.first = nullptr;
 }
 
 address allocate(infotype x) {
-    
+    cout<<"your code here"<<endl;
 }
 
 void deallocate(address &P) {
@@ -23,6 +26,8 @@ void deallocate(address &P) {
 
 void insertFirst(List &L, address P) {
 
+    cout<<"your code here"<<endl;
+
     P->next = L.first;
     L.first = P;
     
@@ -30,7 +35,7 @@ void insertFirst(List &L, address P) {
 
 void insertLast(List &L, address P) {
     
-
+    cout<<"your code here"<<endl;
 
     if (L.first == NULL){
         L.first = P;
@@ -82,6 +87,9 @@ void insertAfter(List &L, address Prec, address P) {
 
 }
 void deleteFirst(List &L, address &P) {
+
+    cout<<"your code here"<<endl;
+
     if (L.first == NULL) {
         P = NULL;                 
     } else {
@@ -92,6 +100,9 @@ void deleteFirst(List &L, address &P) {
 }
  
 void deleteLast(List &L, address &P) {
+
+    cout<<"your code here"<<endl;
+
     if (L.first == NULL) {
         P = NULL;                 
     } else if (L.first->next == NULL) {
@@ -109,6 +120,9 @@ void deleteLast(List &L, address &P) {
  
 
 void deleteAfter(List &L, address Prec, address &P) {
+
+    cout<<"your code here"<<endl;
+
     if (Prec == NULL || Prec->next == NULL) {
         P = NULL;                 
     } else {
