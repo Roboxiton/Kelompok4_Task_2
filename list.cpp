@@ -1,19 +1,11 @@
 #include "list.h"
 
 void createList(List &L) {
-    /**
-    * FS : set first(L) with Null
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
-    //----------------------------------------
     L.first = nullptr;
 }
 
 address allocate(infotype x) {
-@@ -26,14 +19,8 @@ address allocate(infotype x) {
+    
 }
 
 void deallocate(address &P) {
@@ -30,24 +22,14 @@ void deallocate(address &P) {
 }
 
 void insertFirst(List &L, address P) {
-@@ -42,10 +29,8 @@ void insertFirst(List &L, address P) {
-    * FS : element pointed by P became the first element in List L
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
 
     P->next = L.first;
     L.first = P;
-    //----------------------------------------
+    
 }
 
-@@ -55,9 +40,15 @@ void insertLast(List &L, address P) {
-    * FS : element pointed by P became the last element in List L
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
+void insertLast(List &L, address P) {
+    
 
 
     if (L.first == NULL){
@@ -134,4 +116,3 @@ void deleteAfter(List &L, address Prec, address &P) {
         Prec->next = P->next;    
     }
 }
- 
