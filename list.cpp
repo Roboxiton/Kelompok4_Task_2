@@ -8,7 +8,7 @@ void createList(List &L) {
 }
 
 address allocate(infotype x) {
-    address P = new ElmList;
+    address P = new elmlist;
     if (P != NULL) {
         P->info = x;
         P->next = NULL;
@@ -49,22 +49,23 @@ void insertLast(List &L, address P) {
         while (q->next != NULL){
             q = q->next;
         }
-        q->next = p;
+        q->next = P;
     }
     //----------------------------------------
 }
 
 address findElm(List L, infotype x) {
-    /**
-    * IS : List L may be empty
-    * FS : returns element with info.ID = x.ID,
-           return Null if such ID is not found
-    */
-    address P;
-    //-------------your code here-------------
+   
     cout<<"your code here"<<endl;
-    //----------------------------------------
-    return P;
+
+    address P = L.first;
+    while (P != NULL) {
+        if (P->info == x) {
+            return P;
+        }
+        P = P->next;
+    }
+    return NULL;
 }
 
 void printInfo(List L) {
@@ -73,8 +74,19 @@ void printInfo(List L) {
     *      call the view_data function from my_data.h to print the info
     */
     //-------------your code here-------------
-    cout<<"your code here"<<endl;
-    //----------------------------------------
+    cout<<"your code here"<<endl; 
+
+    address P = L.first;
+    if (P == NULL) {
+        cout << " ," << endl;
+    } else {
+        while (P != NULL) {
+            cout << P->info << " ";
+            P = P->next;
+        }
+        cout << endl;
+    }
+
     cout<<endl;
 }
 void insertAfter(List &L, address Prec, address P) {
@@ -136,26 +148,3 @@ void deleteAfter(List &L, address Prec, address &P) {
     }
 }
 
-void printInfo(List L) {
-    address P = L.first;
-    if (P == NULL) {
-        cout << " ," << endl;
-    } else {
-        while (P != NULL) {
-            cout << P->info << " ";
-            P = P->next;
-        }
-        cout << endl;
-    }
-}
-
-address findElmlist(List L, infotype x) {
-    address P = L.first;
-    while (P != NULL) {
-        if (P->info == x) {
-            return P;
-        }
-        P = P->next;
-    }
-    return NULL;
-}
