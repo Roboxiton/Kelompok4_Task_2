@@ -3,24 +3,19 @@
 
 
 void insert_sorted(List &L, infotype x) {
-    address q, prev;
-    bool found;
+    address q = L.first, prev = nullptr;
 
-    address P = allocate(x);
-
-    q = L.first;
-    found = false;
-    prev = nullptr;
-
-    while (q != nullptr && !found) {
-        if (q->info < x) {
-            prev = q;
-            q = q->next;
-        } else {
-            found = true;
-        }
+    while (q != nullptr && q->info < x) {
+        prev = q;
+        q = q->next;
     }
 
+    // jika sudah ada, jangan dimasukkan
+    if (q != nullptr && q->info == x) {
+        return;
+    }
+
+    address P = allocate(x);
     if (prev == nullptr) {
         insertFirst(L, P);
     } else {

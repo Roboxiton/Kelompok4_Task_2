@@ -2,8 +2,6 @@
 
 void createList(List &L) {
 
-    cout<<"your code here"<<endl;
-
     L.first = nullptr;
 }
 
@@ -17,21 +15,13 @@ address allocate(infotype x) {
 }
 
 void deallocate(address &P) {
-    /**
-    * FS : delete element pointed by P
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
-
-
-    //----------------------------------------
+ 
     delete P;
     P = nullptr;
 }
 
 void insertFirst(List &L, address P) {
 
-    cout<<"your code here"<<endl;
 
     P->next = L.first;
     L.first = P;
@@ -40,7 +30,6 @@ void insertFirst(List &L, address P) {
 
 void insertLast(List &L, address P) {
     
-    cout<<"your code here"<<endl;
 
     if (L.first == NULL){
         L.first = P;
@@ -51,12 +40,12 @@ void insertLast(List &L, address P) {
         }
         q->next = P;
     }
-    //----------------------------------------
+  
 }
 
 address findElm(List L, infotype x) {
    
-    cout<<"your code here"<<endl;
+
 
     address P = L.first;
     while (P != NULL) {
@@ -69,43 +58,28 @@ address findElm(List L, infotype x) {
 }
 
 void printInfo(List L) {
-    /**
-    * FS : view info of all element inside List L,
-    *      call the view_data function from my_data.h to print the info
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl; 
+
 
     address P = L.first;
     if (P == NULL) {
-        cout << " ," << endl;
-    } else {
-        while (P != NULL) {
-            cout << P->info << " ";
-            P = P->next;
-        }
-        cout << endl;
+        cout << "[empty]";
     }
+    while (P != NULL) {
+        cout << P->info << ",";
+        if (P->next != NULL) cout << " ";
+        P = P->next;
+    }
+    cout << endl;
 
     cout<<endl;
 }
 void insertAfter(List &L, address Prec, address P) {
-    /**
-    * IS : Prec and P is not NULL
-    * FS : element pointed by P is placed behind the element
-    *      pointed by pointer Prec
-    */
-    //-------------your code here-------------
-    cout<<"your code here"<<endl;
 
     P->next = Prec->next;
     Prec->next = P;
-    //----------------------------------------
 
 }
 void deleteFirst(List &L, address &P) {
-
-    cout<<"your code here"<<endl;
 
     if (L.first == NULL) {
         P = NULL;                 
@@ -117,8 +91,6 @@ void deleteFirst(List &L, address &P) {
 }
  
 void deleteLast(List &L, address &P) {
-
-    cout<<"your code here"<<endl;
 
     if (L.first == NULL) {
         P = NULL;                 
@@ -137,8 +109,6 @@ void deleteLast(List &L, address &P) {
  
 
 void deleteAfter(List &L, address Prec, address &P) {
-
-    cout<<"your code here"<<endl;
 
     if (Prec == NULL || Prec->next == NULL) {
         P = NULL;                 
